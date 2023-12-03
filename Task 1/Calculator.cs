@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task1
+namespace Task 1
 {
     internal class Calculator
     {
-        
+
         static void Main()
         {
             string op_sign = "";
@@ -26,14 +26,16 @@ namespace Task1
                 {
                     case "+":
                         Console.Write("Enter the first number: ");
-                        while(!double.TryParse(Console.ReadLine(), out n1)){
+                        while (!double.TryParse(Console.ReadLine(), out n1))
+                        {
                             Console.Write("Enter the correct first number: ");
                         }
                         Console.Write("Enter the second number: ");
-                        while(!double.TryParse(Console.ReadLine(), out n2)){
+                        while (!double.TryParse(Console.ReadLine(), out n2))
+                        {
                             Console.Write("Enter the correct second number: ");
                         }
-                        Console.WriteLine($"{n1} + {n2} = {n1+n2}");
+                        Console.WriteLine($"{n1} + {n2} = {n1 + n2}");
                         op_sign = "";
                         break;
                     case "-":
@@ -71,7 +73,7 @@ namespace Task1
                             Console.Write("Enter the correct first number: ");
                         }
                         Console.Write("Enter the second number: ");
-                        while (!double.TryParse(Console.ReadLine(), out n2)|| n2 == 0)
+                        while (!double.TryParse(Console.ReadLine(), out n2) || n2 == 0)
                         {
                             Console.Write("Enter the correct second number: ");
                         }
@@ -89,7 +91,7 @@ namespace Task1
                         {
                             Console.Write("Enter the correct second number: ");
                         }
-                        Console.WriteLine($"{n1}^{n2} = {Math.Pow(n1,n2)}");
+                        Console.WriteLine($"{n1}^{n2} = {Math.Pow(n1, n2)}");
                         op_sign = "";
                         break;
                     case "!":
@@ -99,9 +101,9 @@ namespace Task1
                             Console.Write("Enter the correct number: ");
                         }
                         factorial = 1;
-                        if(value != 0 || value != 1)
+                        if (value != 0 || value != 1)
                         {
-                            for(int i = 1; i <= value; i++)
+                            for (int i = 1; i <= value; i++)
                             {
                                 factorial *= (ulong)i;
                             }
@@ -113,13 +115,13 @@ namespace Task1
                         Console.WriteLine($"{value}! = {factorial}");
                         op_sign = "";
                         break;
-                    default: 
+                    default:
                         Console.Write("Enter the sign of the operation you want to perform (+,-,*,/,^,!) or 0 to stop the process: ");
                         op_sign = Console.ReadLine();
                         break;
                 }
             } while (op_sign != "0");
-            
+
         }
     }
 }
